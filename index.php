@@ -68,6 +68,7 @@ $result = $conn->query($sql);
 
     <footer>
         <p>Versión: <?php echo $version; ?></p>
+        <a href="https://github.com/arturoytal/todo/blob/main/changelog.md" target="_blank">Ver Changelog</a></p>
     </footer>
 
 
