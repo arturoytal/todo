@@ -74,17 +74,21 @@ ul li input[type="checkbox"] {
     .container {
         width: 95%;
         max-width: none;
-        padding: 0;
+        padding: 0 20px; /* Agrega un padding para alinear con la lista de tareas */
     }
 
     form {
-        width: calc(95% - 40px); /* Ajusta el ancho del formulario */
-        margin: 0 auto; /* Centra el formulario */
+        width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+        margin: 20px 0;
         flex-direction: column;
     }
 
     input[type="text"], button {
-        width: 100%;
-        margin: 5px 0;
+        width: calc(100% - 40px); /* Ajusta el ancho teniendo en cuenta el padding */
+        margin: 5px 20px; /* Agrega márgenes para alinear con la lista de tareas */
+    }
+
+    button {
+        width: calc(100% - 40px); /* Iguala el ancho del botón al de la caja de texto */
     }
 }
