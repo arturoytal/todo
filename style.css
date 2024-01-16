@@ -90,6 +90,36 @@ a:visited .fas.fa-trash {
 }
 
 
+/* Estilos para el formulario de edición */
+.edit-form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.edit-form input[type="text"] {
+    flex-grow: 1; /* Permite que el campo de texto ocupe el espacio disponible */
+    padding: 5px;
+    margin-right: 10px; /* Espacio entre el campo de texto y el botón */
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.edit-form button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-form button:hover {
+    background-color: #45a049;
+}
+
+
+
 
 @media (max-width: 768px) {
     .container {

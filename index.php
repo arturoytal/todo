@@ -34,7 +34,7 @@ $result = $conn->query($sql);
             echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
             echo " &nbsp; - &nbsp; <a href='#' onclick='showEditForm(" . $row["id"] . ")'><i class='fas fa-edit'></i></a>";
-            echo "<div id='editForm" . $row["id"] . "' style='display:none;'>";
+            echo "<div id='editForm" . $row["id"] . "' class='edit-form' style='display:none;'>";
             echo "<form action='edit_task.php' method='post'>";
             echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
             echo "<input type='text' name='task' value='" . htmlspecialchars($row['task']) . "'>";
