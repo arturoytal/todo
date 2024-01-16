@@ -2,6 +2,10 @@
 
 Todas las mejoras y correcciones importantes en este proyecto se documentarán en este archivo.
 
+## [0.3.3] - 2024-03-26
+### Cambiado
+- Ajustado el script PHP para mostrar dinámicamente la versión del proyecto en el pie de página, basándose en el archivo `changelog`.
+
 ## [0.3.2] - 2024-03-25
 ### Cambiado
 - Reemplazado el texto "Eliminar" por un icono de papelera en la lista de tareas para mejorar la visualización en dispositivos con pantallas pequeñas.

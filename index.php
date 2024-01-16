@@ -48,27 +48,27 @@ $result = $conn->query($sql);
     }
     </script>
         
-        <script>
-            window.onload = function() {
-                 document.getElementById('taskInput').focus();
+    <script>
+        window.onload = function() {
+            document.getElementById('taskInput').focus();
         };
-        </script>
+    </script>
         
-        <?php
-$changelog = file_get_contents('changelog.md');
-$version = ''; // Variable para almacenar la versión
+    <?php
+        $changelog = file_get_contents('changelog');
+        $version = ''; // Variable para almacenar la versión
 
-// Expresión regular para encontrar la versión
-if (preg_match_all('/\#\# \[\d+\.\d+\.\d+\]/', $changelog, $matches)) {
-    // Obtener la última versión (la primera en el archivo)
-    $version = explode(' ', $matches[0][0])[1];
-    $version = trim($version, '[]'); // Eliminar los corchetes
-}
-?>
+        // Expresión regular para encontrar la versión
+        if (preg_match_all('/\#\# \[\d+\.\d+\.\d+\]/', $changelog, $matches)) {
+            // Obtener la última versión (la primera en el archivo)
+            $version = explode(' ', $matches[0][0])[1];
+            $version = trim($version, '[]'); // Eliminar los corchetes
+        }
+    ?>
 
-<footer>
-    <p>Versión: <?php echo $version; ?></p>
-</footer>
+    <footer>
+        <p>Versión: <?php echo $version; ?></p>
+    </footer>
 
 
 
