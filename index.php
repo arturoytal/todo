@@ -54,5 +54,19 @@ $result = $conn->query($sql);
         };
         </script>
         
+    <?php
+        $changelog = file_get_contents('CHANGELOG.md');
+        $version = ''; // Variable para almacenar la versión
+
+        // Expresión regular para encontrar la versión
+        if (preg_match('/\#\# \[(.*?)\]/', $changelog, $matches)) {
+           $version = $matches[1];
+        }
+    ?>
+
+    <footer>
+        <p>Versión: <?php echo $version; ?></p>
+    </footer>
+
 </body>
 </html>
