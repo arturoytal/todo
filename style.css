@@ -78,7 +78,7 @@ ul li input[type="checkbox"] {
     }
 
     form {
-        width: 100%; /* El formulario ocupa el ancho total del contenedor */
+        width: calc(100% - 40px); /* El formulario ocupa el ancho total del contenedor */
         margin: 20px 0;
         flex-direction: column;
     }
