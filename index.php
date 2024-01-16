@@ -55,7 +55,7 @@ $result = $conn->query($sql);
     </script>
         
     <?php
-        $changelog = file_get_contents('changelog');
+        $changelog = file_get_contents('changelog.md');
         $version = ''; // Variable para almacenar la versión
 
         // Expresión regular para encontrar la versión
