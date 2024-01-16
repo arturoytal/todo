@@ -1,24 +1,22 @@
 <?php
 include 'config.php';
 
-// Conexión a la base de datos
 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, task, completed FROM tasks";
+$sql = "SELECT id, task, completed FROM todo"; // Asegúrate de que 'todo' sea el nombre correcto de tu tabla
 $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Tareas con Magd</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tareas</title>
 </head>
 <body>
-    <h1>Lista de Tareas y tal xD</h1>
+    <h1>Lista de Tareas</h1>
     <form action="add_task.php" method="post">
         <input type="text" name="task" placeholder="Añadir nueva tarea">
         <button type="submit">Agregar</button>
