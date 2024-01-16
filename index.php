@@ -47,13 +47,11 @@ $result = $conn->query($sql);
     }
     </script>
         
-    <script>
-    function keepFocus() {
-        setTimeout(function() {
-            document.getElementById('taskInput').focus();
-        }, 0);
-        return true;
-    }
-    </script>
+        <script>
+            window.onload = function() {
+                 document.getElementById('taskInput').focus();
+        };
+        </script>
+        
 </body>
 </html>
