@@ -4,6 +4,11 @@ include 'config.php';
 // Depurar los datos enviados a través del formulario
 var_dump($_POST);
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
