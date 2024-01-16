@@ -74,7 +74,7 @@ ul li input[type="checkbox"] {
     .container {
         width: 95%;
         max-width: none;
-        padding: 0 20px; /* Asegura un margen uniforme */
+        padding: 0 20px; /* Mantiene un margen uniforme */
     }
 
     form {
@@ -83,8 +83,13 @@ ul li input[type="checkbox"] {
         flex-direction: column;
     }
 
-    input[type="text"], button {
-        width: calc(100% - 40px); /* Ajusta el ancho considerando el padding */
+    input[type="text"] {
+        width: calc(100% - 40px); /* Ajusta el ancho considerando el padding y márgenes */
         margin: 5px 20px; /* Márgenes para alinear con el contenedor */
+    }
+
+    button {
+        width: calc(100% - 40px); /* Ajusta el ancho del botón */
+        margin: 5px 20px;
     }
 }
