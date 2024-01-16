@@ -50,6 +50,24 @@ $result = $conn->query($sql);
     ?>
     </ul>
 
+    <?php
+        // Suponiendo que $conn es tu conexión a la base de datos
+        $sql = "SELECT id, task FROM todo WHERE is_deleted = 1 ORDER BY id DESC";
+        $resultDeleted = $conn->query($sql);
+
+        if ($resultDeleted->num_rows > 0) {
+            echo "<h2>Tareas Eliminadas</h2>";
+            echo "<ul>";
+            while($row = $resultDeleted->fetch_assoc()) {
+                echo "<li>";
+                echo $row["task"];
+                echo " <a href='restore_task.php?id=" . $row["id"] . "'><i class='fas fa-redo' style='color: orange;'></i></a>";
+                echo "</li>";
+            }
+            echo "</ul>";
+        }
+    ?>
+
     <script>
     function toggleTask(taskId) {
         window.location.href = 'toggle_task.php?id=' + taskId;
