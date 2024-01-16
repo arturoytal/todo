@@ -58,6 +58,7 @@ $result = $conn->query($sql);
     function showEditForm(id) {
         var form = document.getElementById('editForm' + id);
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
     </script>
         
     <script>
