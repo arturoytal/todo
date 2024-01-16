@@ -33,7 +33,14 @@ $result = $conn->query($sql);
             $checked = $row["completed"] ? "checked" : "";
             echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
-            echo " &nbsp; - &nbsp; <a href='edit_task.php?id=" . $row["id"] . "'><i class='fas fa-edit'></i></a>";
+            echo " &nbsp; - &nbsp; <a href='#' onclick='showEditForm(" . $row["id"] . ")'><i class='fas fa-edit'></i></a>";
+            echo "<div id='editForm" . $row["id"] . "' style='display:none;'>";
+            echo "<form action='edit_task.php' method='post'>";
+            echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
+            echo "<input type='text' name='task' value='" . htmlspecialchars($row['task']) . "'>";
+            echo "<button type='submit'>Guardar</button>";
+            echo "</form>";
+            echo "</div>";
             echo " &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'><i class='fas fa-trash'></i></a>";
             echo "</li>";
         }
@@ -47,6 +54,10 @@ $result = $conn->query($sql);
     function toggleTask(taskId) {
         window.location.href = 'toggle_task.php?id=' + taskId;
     }
+    
+    function showEditForm(id) {
+        var form = document.getElementById('editForm' + id);
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
     </script>
         
     <script>
