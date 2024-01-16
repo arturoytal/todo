@@ -16,6 +16,7 @@ $result = $conn->query($sql);
     <title>Lista de Tareas con Magd</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <h1>Lista de Tareas y tal</h1>
@@ -32,7 +33,7 @@ $result = $conn->query($sql);
             $checked = $row["completed"] ? "checked" : "";
             echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
-            echo " &nbsp; - &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'> Eliminar</a>";
+            echo " &nbsp; - &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'><i class='fas fa-trash'></i></a>";
             echo "</li>";
         }
     } else {
