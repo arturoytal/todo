@@ -6,17 +6,19 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, task, completed FROM todo"; // Asegúrate de que 'todo' sea el nombre correcto de tu tabla
+$sql = "SELECT id, task, completed FROM todo";
 $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Tareas</title>
+    <title>Lista de Tareas con Magd</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Lista de Tareas</h1>
+    <h1>Lista de Tareas y tal</h1>
     <form action="add_task.php" method="post">
         <input type="text" name="task" placeholder="Añadir nueva tarea">
         <button type="submit">Agregar</button>
@@ -27,12 +29,9 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "<li>";
-            if ($row["completed"]) {
-                echo "<s>" . $row["task"] . "</s>";
-            } else {
-                echo $row["task"];
-            }
-            echo " <a href='toggle_task.php?id=" . $row["id"] . "'>Marcar/Desmarcar</a>";
+            $checked = $row["completed"] ? "checked" : "";
+            echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
+            echo " " . $row["task"];
             echo " <a href='delete_task.php?id=" . $row["id"] . "'>Eliminar</a>";
             echo "</li>";
         }
@@ -42,8 +41,10 @@ $result = $conn->query($sql);
     ?>
     </ul>
 
-    <?php
-    $conn->close();
-    ?>
+    <script>
+    function toggleTask(taskId) {
+        window.location.href = 'toggle_task.php?id=' + taskId;
+    }
+    </script>
 </body>
 </html>
