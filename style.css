@@ -78,11 +78,11 @@ ul li input[type="checkbox"] {
     }
 
     form {
-        width: 100%;
+        width: 95%;
         flex-direction: column;
     }
 
     input[type="text"], button {
-        width: 100%;
+        width: 95%;
     }
 }
