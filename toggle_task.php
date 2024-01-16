@@ -9,7 +9,8 @@ if ($conn->connect_error) {
 if (isset($_GET['id'])) {
     $id = $conn->real_escape_string($_GET['id']);
 
-    $sql = "UPDATE tasks SET completed = NOT completed WHERE id = $id";
+    // Cambia el estado de 'completed' de la tarea
+    $sql = "UPDATE todo SET completed = NOT completed WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {
         echo "Estado de la tarea actualizado.";
@@ -21,3 +22,4 @@ if (isset($_GET['id'])) {
 $conn->close();
 header("Location: index.php");
 exit();
+?>
