@@ -2,6 +2,15 @@
 
 Todas las mejoras y correcciones importantes en este proyecto se documentarán en este archivo.
 
+## [0.4.0] - 2024-01-17
+### Añadido
+- Implementada la funcionalidad para editar tareas directamente en la página principal, con un formulario de edición desplegable.
+
+### Cambiado
+- Mejorado el estilo del formulario de edición desplegable, incluyendo ajustes en el campo de texto y el botón, para hacerlo más responsivo y estéticamente agradable.
+- Ajustado el color de los iconos de edición y eliminación para una mejor consistencia visual y para prevenir cambios de color en enlaces visitados.
+
+
 ## [0.3.4] - 2024-01-16
 ### Cambiado
 - Ajustada la alineación y el ancho de la caja de texto y el botón en la versión móvil para que ocupen todo el ancho disponible y sean iguales.
@@ -27,15 +36,18 @@ Todas las mejoras y correcciones importantes en este proyecto se documentarán e
 ### Cambiado
 - Ajustado el ancho del formulario y el botón para alinearlos con la lista de tareas.
 
+
 ## [0.2.0] - 2024-01-16
 ### Cambiado
 - Mejora en la responsividad del diseño de la página.
 - Ajustes en el estilo de la lista de tareas para mejorar la alineación.
 
+
 ## [0.1.0] - 2024-01-16
 ### Añadido
 - Implementación inicial de la lista de tareas.
 - Estilos básicos para la página.
+
 
 ## [0.0.1] - 2024-01-16
 ### Añadido

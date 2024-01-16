@@ -1,24 +1,28 @@
 <?php
 include 'config.php';
 
+$id = $_GET['id'];
+
+// Crear conexión
 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-if (isset($_GET['id'])) {
-    $id = $conn->real_escape_string($_GET['id']);
+// Marcar la tarea como eliminada
+$stmt = $conn->prepare("UPDATE todo SET is_deleted = 1 WHERE id = ?");
+$stmt->bind_param("i", $id);
 
-    $sql = "DELETE FROM todo WHERE id = $id";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Tarea eliminada.";
-    } else {
-        echo "Error al eliminar la tarea: " . $conn->error;
-    }
+if ($stmt->execute()) {
+    echo "Tarea marcada como eliminada.";
+} else {
+    echo "Error al actualizar la tarea: " . $conn->error;
 }
 
+$stmt->close();
 $conn->close();
+
+// Redirigir de vuelta a index.php
 header("Location: index.php");
-exit();
+exit;
 ?>
