@@ -33,7 +33,8 @@ $result = $conn->query($sql);
             $checked = $row["completed"] ? "checked" : "";
             echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
-            echo " &nbsp; - &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'><i class='fas fa-trash'></i></a>";
+            echo " &nbsp; - &nbsp; <a href='edit_task.php?id=" . $row["id"] . "'><i class='fas fa-edit'></i></a>";
+            echo " &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'><i class='fas fa-trash'></i></a>";
             echo "</li>";
         }
     } else {
