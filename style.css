@@ -78,11 +78,13 @@ ul li input[type="checkbox"] {
     }
 
     form {
-        width: 95%;
+        width: calc(95% - 40px); /* Ajusta el ancho del formulario */
+        margin: 0 auto; /* Centra el formulario */
         flex-direction: column;
     }
 
     input[type="text"], button {
-        width: 95%;
+        width: 100%;
+        margin: 5px 0;
     }
 }
