@@ -75,18 +75,19 @@ ul li input[type="checkbox"] {
         width: 95vw; /* Ajusta el ancho del contenedor al 95% del viewport */
         max-width: none;
         margin: auto; /* Centra el contenedor */
-        padding: 0 2.5vw; /* Añade padding para la alineación */
+        padding: 0 2.5vw; /* Añade padding a ambos lados para la alineación */
     }
 
     form {
-        width: 100%; /* El formulario ocupa el ancho total del contenedor, incluyendo el padding */
+        width: calc(100% - 5vw); /* Ajusta el ancho del formulario restando el padding del contenedor */
         margin: 20px 0;
+        padding: 0; /* Sin padding adicional en el formulario */
         flex-direction: column;
     }
 
     input[type="text"], button {
-        width: calc(100% - 5vw); /* Ajusta el ancho de input y botón al 95% del ancho del formulario */
-        margin: 5px 2.5vw 5px 0; /* Ajusta los márgenes para alinear con el contenedor */
+        width: 100%; /* Los elementos internos ocupan todo el ancho disponible en el formulario */
+        margin: 5px 0; /* Margen solo en la parte superior e inferior */
         box-sizing: border-box;
     }
 }
