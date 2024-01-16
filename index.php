@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 <body>
     <h1>Lista de Tareas y tal</h1>
     <form action="add_task.php" method="post">
-        <input type="text" name="task" placeholder="Añadir nueva tarea">
+        <input type="text" name="task" id="taskInput" placeholder="Añadir nueva tarea">
         <button type="submit">Agregar</button>
     </form>
 
