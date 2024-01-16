@@ -70,6 +70,27 @@ ul li input[type="checkbox"] {
     margin-right: 10px;
 }
 
+
+/* Icono de Edición */
+.fas.fa-edit {
+    color: blue; /* Cambia a tu tono preferido de azul */
+    cursor: pointer;
+}
+
+/* Icono de Eliminar */
+.fas.fa-trash {
+    color: red; /* Cambia a tu tono preferido de rojo */
+    cursor: pointer;
+}
+
+/* Estilos para enlaces ya visitados */
+a:visited .fas.fa-edit,
+a:visited .fas.fa-trash {
+    color: inherit; /* Esto asegura que los iconos no cambien de color después de ser visitados */
+}
+
+
+
 @media (max-width: 768px) {
     .container {
         width: 95vw;
