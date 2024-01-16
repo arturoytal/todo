@@ -32,7 +32,7 @@ $result = $conn->query($sql);
             $checked = $row["completed"] ? "checked" : "";
             echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
-            echo "  -  <a href='delete_task.php?id=" . $row["id"] . "'> Eliminar</a>";
+            echo " &nbsp; - &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'> Eliminar</a>";
             echo "</li>";
         }
     } else {

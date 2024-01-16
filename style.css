@@ -8,13 +8,14 @@ body {
 
 .container {
     width: 80%;
-    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    max-width: 600px;
     margin: auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 0 20px;
 }
 
 h1 {
@@ -29,19 +30,17 @@ form {
     justify-content: center;
 }
 
-input[type="text"], button {
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
 input[type="text"] {
-    width: calc(100% - 120px); /* Ajusta el ancho del input según el del botón */
+    padding: 10px;
+    width: calc(100% - 120px);
+    margin-right: 5px;
 }
 
 button {
+    padding: 10px 15px;
     background-color: #5cb85c;
     color: white;
+    cursor: pointer;
 }
 
 button:hover {
@@ -51,8 +50,9 @@ button:hover {
 ul {
     list-style-type: none;
     padding: 0;
-    width: 100%;
     margin: 0 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
 }
 
 ul li {
@@ -64,6 +64,7 @@ ul li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    word-break: break-word;
 }
 
 ul li.completed {
@@ -75,7 +76,6 @@ ul li input[type="checkbox"] {
     margin-right: 10px;
 }
 
-/* Media Queries para Diseño Responsivo */
 @media (max-width: 768px) {
     .container {
         width: 95%;
