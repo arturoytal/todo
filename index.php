@@ -32,7 +32,7 @@ $result = $conn->query($sql);
             $checked = $row["completed"] ? "checked" : "";
             echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
-            echo " <a href='delete_task.php?id=" . $row["id"] . "'>  -  Eliminar</a>";
+            echo "  -  <a href='delete_task.php?id=" . $row["id"] . "'> Eliminar</a>";
             echo "</li>";
         }
     } else {
@@ -52,6 +52,6 @@ $result = $conn->query($sql);
                  document.getElementById('taskInput').focus();
         };
         </script>
-
+        
 </body>
 </html>
