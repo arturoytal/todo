@@ -59,15 +59,18 @@ $changelog = file_get_contents('CHANGELOG.md');
 $version = ''; // Variable para almacenar la versión
 
 // Expresión regular para encontrar la versión
-if (preg_match_all('/\#\# \[(.*?)\]/', $changelog, $matches)) {
+if (preg_match_all('/\#\# \[\d+\.\d+\.\d+\]/', $changelog, $matches)) {
     // Obtener la última versión (la primera en el archivo)
-    $version = $matches[1][0];
+    $version = explode(' ', $matches[0][0])[1];
+    $version = trim($version, '[]'); // Eliminar los corchetes
 }
 ?>
 
 <footer>
     <p>Versión: <?php echo $version; ?></p>
 </footer>
+
+
 
 </body>
 </html>
