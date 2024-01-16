@@ -6,7 +6,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, task, completed FROM todo";
+$sql = "SELECT id, task, completed FROM todo ORDER BY completed ASC, id DESC";
 $result = $conn->query($sql);
 ?>
 
