@@ -8,7 +8,7 @@ body {
 
 .container {
     width: 80%;
-    max-width: 600px; /* Ajusta el ancho máximo al que desees */
+    max-width: 600px; /* Ajusta el ancho máximo según lo necesites */
     margin: auto;
     overflow: hidden;
     display: flex;
@@ -25,11 +25,13 @@ form {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+    display: flex;
+    justify-content: center;
 }
 
 input[type="text"] {
     padding: 10px;
-    width: calc(100% - 100px); /* Ajusta el ancho del input, considerando el botón */
+    width: 80%; /* Ajusta el ancho del input */
     margin-right: 5px;
 }
 
@@ -39,6 +41,7 @@ button {
     border: none;
     color: white;
     cursor: pointer;
+    width: 20%; /* Ajusta el ancho del botón */
 }
 
 button:hover {
@@ -49,6 +52,7 @@ ul {
     list-style-type: none;
     padding: 0;
     width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
+    margin: 0 20px; /* Añade márgenes a los lados de la lista */
 }
 
 ul li {
