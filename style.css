@@ -26,7 +26,7 @@ form {
 
 input[type="text"] {
     padding: 10px;
-    width: 73%;
+    width: 75%;
 }
 
 button {
@@ -83,13 +83,8 @@ ul li input[type="checkbox"] {
         flex-direction: column;
     }
 
-    input[type="text"] {
-        width: calc(100% - 40px); /* Ajusta el ancho considerando el padding y márgenes */
+    input[type="text"], button {
+        width: calc(100% - 40px); /* Ajusta el ancho considerando el padding */
         margin: 5px 20px; /* Márgenes para alinear con el contenedor */
-    }
-
-    button {
-        width: calc(100% - 40px); /* Ajusta el ancho del botón */
-        margin: 5px 20px;
     }
 }
