@@ -74,23 +74,19 @@ ul li input[type="checkbox"] {
     .container {
         width: 95%;
         max-width: none;
-        padding: 0 20px;
+        padding: 0; /* Elimina el padding para evitar problemas de desbordamiento */
     }
 
     form {
-        width: 100%;
+        width: 100%; /* El formulario ocupa el ancho total del contenedor */
         margin: 20px 0;
         flex-direction: column;
+        padding: 0 20px; /* Añade padding aquí para alinear con el contenido del contenedor */
     }
 
-    input[type="text"] {
+    input[type="text"], button {
         width: 100%; /* Ajusta el ancho para ocupar el 100% del espacio disponible */
-        margin: 5px 20px 5px 20px; /* Márgenes a ambos lados */
+        margin: 5px 0; /* Solo margen superior e inferior */
         box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-    }
-
-    button {
-        width: 100%; /* Ajusta el ancho del botón para coincidir con el input */
-        margin: 5px 20px 5px 20px;
     }
 }
