@@ -92,6 +92,6 @@ ul li input[type="checkbox"] {
     }
 
     h1, input[type="text"], button, ul li {
-        font-size: 1.2em; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+        font-size: 1.5em; /* Aumenta el tamaño de la fuente para mejor legibilidad */
     }
 }

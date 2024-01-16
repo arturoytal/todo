@@ -2,9 +2,14 @@
 
 Todas las mejoras y correcciones importantes en este proyecto se documentarán en este archivo.
 
+## [0.3.4] - 2024-01-16
+### Cambiado
+- Ajustada la alineación y el ancho de la caja de texto y el botón en la versión móvil para que ocupen todo el ancho disponible y sean iguales.
+- Aumentado el tamaño de la fuente para mejorar la legibilidad en dispositivos móviles.
+
 ## [0.3.3] - 2024-01-16
 ### Cambiado
-- Ajustado el script PHP para mostrar dinámicamente la versión del proyecto en el pie de página, basándose en el archivo `changelog`.
+- Ajustado el script PHP para mostrar dinámicamente la versión del proyecto en el pie de página, basándose en el archivo `changelog.md`.
 
 ## [0.3.2] - 2024-01-16
 ### Cambiado
@@ -17,7 +22,7 @@ Todas las mejoras y correcciones importantes en este proyecto se documentarán e
 ## [0.3.0] - 2024-01-16
 ### Añadido
 - Añadido control de versiones en el pie de página.
-- Añadido archivo `CHANGELOG.md` para el seguimiento de cambios.
+- Añadido archivo `changelog.md` para el seguimiento de cambios.
 
 ### Cambiado
 - Ajustado el ancho del formulario y el botón para alinearlos con la lista de tareas.
