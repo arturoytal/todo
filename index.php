@@ -46,5 +46,14 @@ $result = $conn->query($sql);
         window.location.href = 'toggle_task.php?id=' + taskId;
     }
     </script>
+        
+    <script>
+    function keepFocus() {
+        setTimeout(function() {
+            document.getElementById('taskInput').focus();
+        }, 0);
+        return true;
+    }
+    </script>
 </body>
 </html>
