@@ -61,7 +61,8 @@ $result = $conn->query($sql);
             while($row = $resultDeleted->fetch_assoc()) {
                 echo "<li>";
                 echo $row["task"];
-                echo " <a href='restore_task.php?id=" . $row["id"] . "'><i class='fas fa-redo' style='color: orange;'></i></a>";
+                echo " &nbsp; - &nbsp; <a href='restore_task.php?id=" . $row["id"] . "'><i class='fas fa-redo' style='color: orange;'></i></a>";
+                echo " <a href='delete_permanently.php?id=" . $row["id"] . "'><i class='fas fa-trash' style='color: red;'></i></a>";
                 echo "</li>";
             }
             echo "</ul>";
