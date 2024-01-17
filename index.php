@@ -31,7 +31,7 @@ $result = $conn->query($sql);
         while($row = $result->fetch_assoc()) {
             echo "<li>";
             $checked = $row["completed"] ? "checked" : "";
-            echo "<input type='checkbox' $checked onclick='actions/toggleTask(" . $row["id"] . ")'>";
+            echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
             echo " &nbsp; - &nbsp; <a href='#' onclick='showEditForm(" . $row["id"] . ")'><i class='fas fa-edit'></i></a>";
             echo "<div id='editForm" . $row["id"] . "' class='edit-form' style='display:none;'>";
