@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"], button {
+    padding: 10px;
+}
+
+input[type="text"] {
+    width: 70%;
+}
+
+button {
+    width: 20%;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 20px;
+}
+
+ul li {
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0;
+    }
+
+    input[type="text"], button {
+        width: 100%; /* Ajusta para que ocupen todo el ancho disponible */
+        margin: 5px 0; /* Ajusta los márgenes */
+    }
+
+    form {
+        flex-direction: column; /* Cambia la disposición de los elementos del formulario */
+    }
+
+    h1, input[type="text"], button, ul li {
+        font-size: 1.2em; /* Aumenta el tamaño de la fuente para mejorar la legibilidad */
+    }
+}

@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'config/config.php';
 
 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
@@ -14,13 +14,13 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Lista de Tareas con Magd</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <h1>Lista de Tareas y tal</h1>
-    <form action="add_task.php" method="post">
+    <form action="actions/add_task.php" method="post">
         <input type="text" name="task" id="taskInput" placeholder="Añadir nueva tarea">
         <button type="submit">Agregar</button>
     </form>
@@ -31,17 +31,17 @@ $result = $conn->query($sql);
         while($row = $result->fetch_assoc()) {
             echo "<li>";
             $checked = $row["completed"] ? "checked" : "";
-            echo "<input type='checkbox' $checked onclick='toggleTask(" . $row["id"] . ")'>";
+            echo "<input type='checkbox' $checked onclick='actions/toggleTask(" . $row["id"] . ")'>";
             echo " " . $row["task"];
             echo " &nbsp; - &nbsp; <a href='#' onclick='showEditForm(" . $row["id"] . ")'><i class='fas fa-edit'></i></a>";
             echo "<div id='editForm" . $row["id"] . "' class='edit-form' style='display:none;'>";
-            echo "<form action='edit_task.php' method='post'>";
+            echo "<form action='actions/edit_task.php' method='post'>";
             echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
             echo "<input type='text' name='task' value='" . htmlspecialchars($row['task']) . "'>";
             echo "<button type='submit'>Guardar</button>";
             echo "</form>";
             echo "</div>";
-            echo " &nbsp; <a href='delete_task.php?id=" . $row["id"] . "'><i class='fas fa-trash'></i></a>";
+            echo " &nbsp; <a href='actions/delete_task.php?id=" . $row["id"] . "'><i class='fas fa-trash'></i></a>";
             echo "</li>";
         }
     } else {
@@ -61,8 +61,8 @@ $result = $conn->query($sql);
             while($row = $resultDeleted->fetch_assoc()) {
                 echo "<li>";
                 echo $row["task"];
-                echo " &nbsp; - &nbsp; <a href='restore_task.php?id=" . $row["id"] . "'><i class='fas fa-redo' style='color: orange;'></i></a>";
-                echo " <a href='delete_permanently.php?id=" . $row["id"] . "'><i class='fas fa-trash' style='color: red;'></i></a>";
+                echo " &nbsp; - &nbsp; <a href='actions/restore_task.php?id=" . $row["id"] . "'><i class='fas fa-redo' style='color: orange;'></i></a>";
+                echo " &nbsp; <a href='actions/delete_permanently.php?id=" . $row["id"] . "'><i class='fas fa-trash' style='color: red;'></i></a>";
                 echo "</li>";
             }
             echo "</ul>";
@@ -71,7 +71,7 @@ $result = $conn->query($sql);
 
     <script>
     function toggleTask(taskId) {
-        window.location.href = 'toggle_task.php?id=' + taskId;
+        window.location.href = 'actions/toggle_task.php?id=' + taskId;
     }
     
     function showEditForm(id) {
