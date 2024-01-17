@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'config/config.php';
 
 // Comprueba si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
