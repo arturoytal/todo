@@ -1,5 +1,5 @@
 <?php
-include 'config/config.php';
+include '/config/config.php';
 
 // Obtener el ID de la tarea a eliminar de manera permanente
 $id = $_GET['id'];

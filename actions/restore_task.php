@@ -1,5 +1,5 @@
 <?php
-include 'config/config.php';
+include '/config/config.php';
 
 // Obtener el ID de la tarea a restaurar
 $id = $_GET['id'];
